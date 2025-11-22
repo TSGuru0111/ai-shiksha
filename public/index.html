@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AI-powered tutoring system for government schools in India - Personalized learning in literacy and numeracy">
+    <meta name="keywords" content="education, AI tutoring, India, government schools, literacy, numeracy, multilingual">
+    <meta name="theme-color" content="#6366f1">
+
+    <title>AI Shiksha - Smart Learning for India 🇮🇳</title>
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2>AI Shiksha</h2>
+            <p>Loading your personalized learning experience...</p>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="app" class="app-container" style="display: none;">
+        <!-- Navigation Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">AI Shiksha</span>
+                </div>
+                <nav class="header-nav">
+                    <button id="language-selector" class="nav-button" aria-label="Change language">
+                        <span class="icon">🌐</span>
+                        <span class="text">English</span>
+                    </button>
+                    <button id="profile-button" class="nav-button" aria-label="User profile">
+                        <span class="icon">👤</span>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Welcome Screen -->
+            <section id="welcome-screen" class="screen active">
+                <div class="welcome-container">
+                    <div class="welcome-hero">
+                        <h1 class="welcome-title">
+                            Welcome to <span class="gradient-text">AI Shiksha</span>
+                        </h1>
+                        <p class="welcome-subtitle">
+                            Your personal AI tutor for literacy and numeracy
+                        </p>
+                        <p class="welcome-description">
+                            Learn at your own pace with personalized lessons in your language
+                        </p>
+                    </div>
+
+                    <div class="role-selection">
+                        <h2>I am a...</h2>
+                        <div class="role-cards">
+                            <button class="role-card" data-role="student">
+                                <span class="role-icon">🎓</span>
+                                <span class="role-title">Student</span>
+                                <span class="role-description">Start learning</span>
+                            </button>
+                            <button class="role-card" data-role="teacher">
+                                <span class="role-icon">👨‍🏫</span>
+                                <span class="role-title">Teacher</span>
+                                <span class="role-description">View analytics</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <span class="feature-icon">🤖</span>
+                            <h3>AI-Powered</h3>
+                            <p>Smart tutoring that adapts to you</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🌐</span>
+                            <h3>Multilingual</h3>
+                            <p>Learn in your language</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📴</span>
+                            <h3>Offline Ready</h3>
+                            <p>Works without internet</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🎮</span>
+                            <h3>Gamified</h3>
+                            <p>Earn badges and rewards</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Student Learning Screen -->
+            <section id="student-screen" class="screen">
+                <div class="student-container">
+                    <!-- Subject Selection -->
+                    <div class="subject-selector">
+                        <button class="subject-card active" data-subject="literacy">
+                            <span class="subject-icon">📖</span>
+                            <span class="subject-title">Literacy</span>
+                        </button>
+                        <button class="subject-card" data-subject="numeracy">
+                            <span class="subject-icon">🔢</span>
+                            <span class="subject-title">Numeracy</span>
+                        </button>
+                        <button class="subject-card" data-subject="assessment">
+                            <span class="subject-icon">📝</span>
+                            <span class="subject-title">Test</span>
+                        </button>
+                    </div>
+
+                    <!-- Chat Interface -->
+                    <div class="chat-container">
+                        <div id="chat-messages" class="chat-messages">
+                            <!-- Messages will be added here dynamically -->
+                        </div>
+                        <div class="chat-input-container">
+                            <button id="voice-button" class="voice-button" aria-label="Voice input">
+                                <span class="icon">🎤</span>
+                            </button>
+                            <input type="text" id="chat-input" class="chat-input" placeholder="Ask me anything..."
+                                autocomplete="off">
+                            <button id="send-button" class="send-button" aria-label="Send message">
+                                <span class="icon">📤</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Progress Sidebar -->
+                    <aside class="progress-sidebar">
+                        <div class="progress-header">
+                            <h3>Your Progress</h3>
+                        </div>
+                        <div class="progress-stats">
+                            <div class="stat-card">
+                                <span class="stat-value" id="lessons-completed">0</span>
+                                <span class="stat-label">Lessons</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-value" id="streak-days">0</span>
+                                <span class="stat-label">Day Streak</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-value" id="badges-earned">0</span>
+                                <span class="stat-label">Badges</span>
+                            </div>
+                        </div>
+                        <div class="achievements">
+                            <h4>Recent Achievements</h4>
+                            <div id="achievement-list" class="achievement-list">
+                                <!-- Achievements will be added here -->
+                                <span class="icon">🎓</span>
+                                <span class="label">Learn</span>
+                                </button>
+                                <button class="nav-item" data-screen="progress">
+                                    <span class="icon">📊</span>
+                                    <span class="label">Progress</span>
+                                </button>
+                                <button class="nav-item" data-screen="achievements">
+                                    <span class="icon">🏆</span>
+                                    <span class="label">Badges</span>
+                                </button>
+                                </nav>
+                            </div>
+
+                            <!-- Language Selection Modal -->
+                            <div id="language-modal" class="modal">
+                                <div class="modal-content">
+                                    <h2>Select Language / भाषा चुनें</h2>
+                                    <div class="language-options">
+                                        <button class="language-option" data-lang="en">English</button>
+                                        <button class="language-option" data-lang="hi">हिंदी (Hindi)</button>
+                                        <button class="language-option" data-lang="ta">தமிழ் (Tamil)</button>
+                                        <button class="language-option" data-lang="te">తెలుగు (Telugu)</button>
+                                        <button class="language-option" data-lang="mr">मराठी (Marathi)</button>
+                                        <button class="language-option" data-lang="bn">বাংলা (Bengali)</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Scripts -->
+                            <script src="/js/student-app.js" type="module"></script>
+
+                            <!-- Service Worker Registration -->
+                            <script>
+                                if ('serviceWorker' in navigator) {
+                                    window.addEventListener('load', () => {
+                                        navigator.serviceWorker.register('/sw.js')
+                                            .then(reg => console.log('Service Worker registered'))
+                                            .catch(err => console.log('Service Worker registration failed:', err));
+                                    });
+                                }
+                            </script>
+</body>
+
+</html>

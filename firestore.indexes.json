@@ -1,0 +1,109 @@
+{
+    "indexes": [
+        {
+            "collectionGroup": "students",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "schoolId",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "grade",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "createdAt",
+                    "order": "DESCENDING"
+                }
+            ]
+        },
+        {
+            "collectionGroup": "progress",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "studentId",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "subject",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "timestamp",
+                    "order": "DESCENDING"
+                }
+            ]
+        },
+        {
+            "collectionGroup": "assessments",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "studentId",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "completedAt",
+                    "order": "DESCENDING"
+                }
+            ]
+        },
+        {
+            "collectionGroup": "assessments",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "schoolId",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "grade",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "subject",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "completedAt",
+                    "order": "DESCENDING"
+                }
+            ]
+        },
+        {
+            "collectionGroup": "analytics",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "schoolId",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "date",
+                    "order": "DESCENDING"
+                }
+            ]
+        },
+        {
+            "collectionGroup": "study_groups",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "schoolId",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "active",
+                    "order": "DESCENDING"
+                },
+                {
+                    "fieldPath": "createdAt",
+                    "order": "DESCENDING"
+                }
+            ]
+        }
+    ],
+    "fieldOverrides": []
+}
