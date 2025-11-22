@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI Shiksha - Smart Learning for India 🇮🇳
 
 An AI-powered tutoring system designed for government schools in India, providing personalized learning in **literacy** and **numeracy** with multilingual support.
@@ -186,3 +187,6 @@ For support, email support@aishiksha.com or open an issue in the GitHub reposito
 ---
 
 **Made with ❤️ for Indian students**
+=======
+# ai-shiksha
+>>>>>>> 641e494bdea542b395b9fac6e5b7f4266faf8ffa
